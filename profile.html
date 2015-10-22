@@ -1,5 +1,16 @@
+<!-- STEP #4: simple adding of curly braces for the profile page 
+
+to find the ctrl.user properties, look at apiService.js in STEP #4(b)
+
+after doing this go to STEP #5: apiService.js -->
+
 <div class="profile-tile">
-  <!--TODO #4: Show the user's profile picture-->
+  <!--TODO #4: Show the user's profile picture
+  note the curly braces inside the ng-src directive 
+  this is an exception to most ng- directives in Angular
+  where you would not use the {{ curly braces }}
+  -->
+
   <img class="avatar">
   <div class="text-center">
     <div>
@@ -25,6 +36,6 @@
 </div>
 
 <div class="text-center">
-  <!--TODO #4: Log the user out when they click this button-->
-  <button class="btn btn-primary">Log Out</button>
+  <!--TODO #5(c): Log the user out when they click this button-->
+  <button class="btn btn-primary" ng-click="ctrl.logout()">Log Out</button>
 </div>
