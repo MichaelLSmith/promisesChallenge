@@ -14,6 +14,8 @@ ApiService.prototype.login = function(username, password) {
   return this.$http.post(LOGIN_URL, {username: username, password: password})
   .then(function(response) {
     localStorage.authToken = response.data.authToken;
+    console.log(response);
+    console.log(localStorage.authToken);
   });
 };
 
@@ -29,6 +31,14 @@ ApiService.prototype.login = function(username, password) {
   This function should a return a promise that 
   resolves the user data
 */
+ApiService.prototype.getProfile = function(){
+  this.$http ({
+    method: 'GET',
+    url: PROFILE_URL,
+    headers: {authentication: localStorage}
+  });
+
+}
 
 /*TODO #1:
   add a createAccount() function that sends POST to
